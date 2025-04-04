@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/04 13:56:24 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/04 13:59:16 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
-{	
-	int i;
+int	ft_strlen(char *str)
+{
+	int	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s1[i] == s2[i])
+	while (str[i] != '\0')
+	{
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (i);
 }
+
 // int main(int argc, char **argv)
 // {
 // 	if(argc == 3)

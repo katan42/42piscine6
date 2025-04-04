@@ -1,32 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/04 13:56:24 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/04 14:00:53 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
-{	
-	int i;
-
-	i = 0;
-	while (s1[i] != '\0' && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
-// int main(int argc, char **argv)
-// {
-// 	if(argc == 3)
-// 	{
-// 		printf("ft_strcmp: %d\n", ft_strcmp(argv[1], argv[2]));
-// 		printf("strcmp: %d\n", strcmp(argv[1], argv[2]));
-// 	}
-// }
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar(nb + '0');
+	}
+}
+/*
+int	main(void)
+{
+	ft_putnbr(-2146483648);
+	ft_putchar('\n');
+	ft_putnbr(2146483647);
+	ft_putchar('\n');
+	ft_putnbr(488);
+	ft_putchar('\n');
+	ft_putnbr(0);
+	ft_putchar('\n');
+} */
