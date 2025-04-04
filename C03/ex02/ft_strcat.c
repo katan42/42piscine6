@@ -6,13 +6,12 @@
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/04 13:56:20 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/04 16:16:10 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-
 #include <unistd.h>
 
 char	*ft_strcat(char *dest, char *src)
@@ -35,11 +34,19 @@ char	*ft_strcat(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-// int main(int argc, char **argv)
+
+// int	main(int argc, char **argv)
 // {
-// 	if(argc == 3)
+// 	char	dest[20];
+// 	char	src[20];
+
+// 	if (argc == 3)
 // 	{
-// 		printf("ft_strcmp: %d\n", ft_strcmp(argv[1], argv[2]));
-// 		printf("strcmp: %d\n", strcmp(argv[1], argv[2]));
+// 		strcpy(dest, argv[1]);
+// 		strcpy(src, argv[2]);
+// 		printf("ft_strcat: %s\n", ft_strcat(dest, src));
+// 		strcpy(dest, argv[1]);
+// 		strcpy(src, argv[2]);
+// 		printf("strcat: %s\n", strcat(dest, src));
 // 	}
 // }

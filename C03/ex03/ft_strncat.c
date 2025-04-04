@@ -6,11 +6,13 @@
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/04 13:56:16 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/04 16:16:19 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
 int	str_count(char *str)
 {
@@ -44,11 +46,19 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 
-// int main(int argc, char **argv)
+//strncat limits how much is copied and adds a null terminator at the back
+// int	main(int argc, char **argv)
 // {
-// 	if(argc == 3)
+// 	char	dest[9];
+// 	char	src[20];
+
+// 	if (argc == 3)
 // 	{
-// 		printf("ft_strcmp: %d\n", ft_strcmp(argv[1], argv[2]));
-// 		printf("strcmp: %d\n", strcmp(argv[1], argv[2]));
+// 		strcpy(dest, argv[1]);
+// 		strcpy(src, argv[2]);
+// 		printf("ft_strncat: %s\n", ft_strncat(dest, src, 3));
+// 		strcpy(dest, argv[1]);
+// 		strcpy(src, argv[2]);
+// 		printf("strncat: %s\n", strncat(dest, src, 3));
 // 	}
 // }
