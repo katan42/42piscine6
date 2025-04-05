@@ -1,55 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:25:12 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/01 16:15:34 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
-void	ft_putchar(char c)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	j;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+	i = *a / *b;
+	j = *a % *b;
+	*a = i;
+	*b = j;
 }
-
-// int	main(void)
+// int main(void)
 // {
-// 	ft_putnbr(-2146483648);
-// 	ft_putchar('\n');
-// 	ft_putnbr(2146483647);
-// 	ft_putchar('\n');
-// 	ft_putnbr(488);
-// 	ft_putchar('\n');
-// 	ft_putnbr(0);
-// 	ft_putchar('\n');
+// 	int x;
+// 	int y;
+
+// 	x = 26;
+// 	y = 4;
+// 	printf("x initial %d\n", x);
+// 	printf("y initial %d\n", y);
+// 	ft_ultimate_div_mod(&x,&y);
+// 	printf("x after (x/y) %d\n", x);
+// 	printf("y after (x%%y) %d\n", y);
 // }

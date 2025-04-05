@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:19:30 by ka-tan           ###   ########.fr       */
+/*   Created: 2025/03/27 18:19:29 by ka-tan            #+#    #+#             */
+/*   Updated: 2025/03/27 19:26:17 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_is_negative(int n)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (n >= 0)
 	{
-		i++;
+		write(1, "P", 1);
 	}
-	return (i);
+	else
+	{
+		write(1, "N", 1);
+	}
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	char str[20] = "12345678901234567";
-
-// 	printf("strlen %d\n", ft_strlen(str));
+// 	ft_is_negative(-5);
+// 	ft_is_negative(6);
+// 	ft_is_negative(0);
 // }

@@ -1,55 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:25:12 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/03/31 17:37:45 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+	i = *a;
+	*a = *b;
+	*b = i;
 }
-
-// int	main(void)
+// int main(void)
 // {
-// 	ft_putnbr(-2146483648);
-// 	ft_putchar('\n');
-// 	ft_putnbr(2146483647);
-// 	ft_putchar('\n');
-// 	ft_putnbr(488);
-// 	ft_putchar('\n');
-// 	ft_putnbr(0);
-// 	ft_putchar('\n');
+// 	int x = 0;
+
+// 	printf("ft_swap bef %d\n", x);
+// 	ft_swap(&x);
+// 	printf("ft_swap aft %d\n", x);
 // }

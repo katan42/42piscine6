@@ -1,55 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:25:12 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/03/31 17:29:43 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
-void	ft_putchar(char c)
+void	ft_ultimate_ft(int *********nbr)
 {
-	write(1, &c, 1);
+	*********nbr = 42;
 }
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
-}
-
-// int	main(void)
+// int main(void)
 // {
-// 	ft_putnbr(-2146483648);
-// 	ft_putchar('\n');
-// 	ft_putnbr(2146483647);
-// 	ft_putchar('\n');
-// 	ft_putnbr(488);
-// 	ft_putchar('\n');
-// 	ft_putnbr(0);
-// 	ft_putchar('\n');
+// 	int value;
+// 	int *ptr1 = &value;
+// 	int **ptr2 = &ptr1;
+// 	int ***ptr3 = &ptr2;
+// 	int ****ptr4 = &ptr3;
+// 	int *****ptr5 = &ptr4;
+// 	int ******ptr6 = &ptr5;
+// 	int *******ptr7 = &ptr6;
+// 	int ********ptr8 = &ptr7;
+// 	int *********ptr9 = &ptr8;
+
+// 	ft_ultimate_ft(ptr9);
+// 	printf("Value after ft_ultimate_ft: %d\n", value);
+
+// 	return 0;
 // }

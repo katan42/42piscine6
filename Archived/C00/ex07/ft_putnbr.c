@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:25:12 by ka-tan           ###   ########.fr       */
+/*   Created: 2025/03/27 18:19:29 by ka-tan            #+#    #+#             */
+/*   Updated: 2025/03/27 19:32:45 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -42,14 +42,12 @@ void	ft_putnbr(int nb)
 	}
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	ft_putnbr(-2146483648);
-// 	ft_putchar('\n');
-// 	ft_putnbr(2146483647);
-// 	ft_putchar('\n');
-// 	ft_putnbr(488);
-// 	ft_putchar('\n');
+// 	ft_putnbr(5);
+// 	ft_putnbr(2147483647);
+// 	ft_putnbr(-2147483648);
 // 	ft_putnbr(0);
-// 	ft_putchar('\n');
+// 	ft_putnbr(25);
+
 // }

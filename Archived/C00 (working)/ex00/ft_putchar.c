@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:19:30 by ka-tan           ###   ########.fr       */
+/*   Created: 2025/03/27 18:20:30 by ka-tan            #+#    #+#             */
+/*   Updated: 2025/04/01 13:11:19 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	write(1, &c, 1);
 }
-
-// int	main(void)
+// int main(void)
 // {
-// 	char str[20] = "12345678901234567";
+//     char c;
 
-// 	printf("strlen %d\n", ft_strlen(str));
+//     c = 'a';
+//     ft_putchar(c);
 // }

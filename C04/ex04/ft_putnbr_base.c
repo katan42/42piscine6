@@ -1,18 +1,87 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/05 21:06:38 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/05 22:37:11 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+int	valid_base(char *base)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while(base[i] != '\0')
+	{
+		if (base[i] == '+' || base[i] == '-' || base[i] <= 32 || base [i] == 127)
+			return (0);
+		
+	}
+	
+
+
+}
+
+
+
+void ft_putnbr_base(int nbr, char *base)
+{
+	if (base == "" ||)
+		return ;
+
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar(nb + '0');
+	}
+}
+
+// int	main(void)
+// {
+// 	ft_putnbr(-2146483648);
+// 	ft_putchar('\n');
+// 	ft_putnbr(2146483647);
+// 	ft_putchar('\n');
+// 	ft_putnbr(488);
+// 	ft_putchar('\n');
+// 	ft_putnbr(0);
+// 	ft_putchar('\n');
+// }
+
 
 int	ft_atoi(char *str)
 {
