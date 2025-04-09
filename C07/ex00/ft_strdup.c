@@ -6,7 +6,7 @@
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/09 00:56:19 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/09 16:51:27 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ char	*ft_strdup(char *src)
 	return (str_cpy (dest, src));
 }
 
-int		main(void)
-{
-		char	*str;
-		char	*allocated;
+// int		main(void)
+// {
+// 		char	*str;
+// 		char	*allocated;
 
-		str = "Hello World with malloc()";
-		printf("original  : base  : $%s$ @ %p\n", str, str);
-		allocated = ft_strdup(str);
-		printf("copied    : alloc : $%s$ @ %p\n", allocated, allocated);
-		allocated = ft_strdup(str);
-		printf("ft_copied : alloc : $%s$ @ %p\n", allocated, allocated);
-}
+// 		str = "Hello World with malloc()";
+// 		printf("original  : base  : $%s$ @ %p\n", str, str);
+// 		allocated = ft_strdup(str);
+// 		printf("copied    : alloc : $%s$ @ %p\n", allocated, allocated);
+// 		allocated = ft_strdup(str);
+// 		printf("ft_copied : alloc : $%s$ @ %p\n", allocated, allocated);
+// }
 

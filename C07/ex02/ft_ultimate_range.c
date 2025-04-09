@@ -1,39 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/04 14:02:14 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/09 22:40:25 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
+	int				*array;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (min >= max)
 	{
-		ft_putchar(str[i]);
+		*range = NULL;
+		return (0);
+	}
+	array = malloc((max - min) * sizeof(int));
+	if (!*range)
+		return (-1);
+	while (min <= max)
+	{
+		*range[i] = min;
+		min++;
 		i++;
 	}
+	return (i);
 }
 
-// int main(int argc, char **argv)
-// {
-// 	if(argc == 3)
-// 	{
-// 		printf("ft_strcmp: %d\n", ft_strcmp(argv[1], argv[2]));
-// 		printf("strcmp: %d\n", strcmp(argv[1], argv[2]));
-// 	}
-// }
+int	main(void)
+{
+	int	min;
+	int	max;
+	int	*tab;
+	int	i = 0;
+
+	min = 1;
+	max = 10;
+	tab = ft_range(min, max);
+	while (i <= (max - min))
+	{
+		printf("%d, ", tab[i]);
+		i++;
+	}
+	printf("\n");
+	free (tab);
+	return (0);
+}
