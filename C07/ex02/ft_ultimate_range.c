@@ -6,7 +6,7 @@
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/10 09:21:09 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/10 13:11:31 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int				*array;
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	if (min >= max)
@@ -25,12 +24,12 @@ int	ft_ultimate_range(int **range, int min, int max)
 		*range = NULL;
 		return (0);
 	}
-	array = (int *)malloc((max - min) * sizeof(int));
-	if (!array)
+	*range = malloc((max - min) * sizeof(int));
+	if (*range == NULL)
 		return (-1);
-	while (min <= max)
+	while (min < max)
 	{
-		*range[i] = min;
+		(*range)[i] = min;
 		min++;
 		i++;
 	}
@@ -39,20 +38,25 @@ int	ft_ultimate_range(int **range, int min, int max)
 
 int	main(void)
 {
-	int	min;
-	int	max;
+	int	min = 1;
+	int	max = 10;
 	int	*tab;
+	int	size;
 	int	i = 0;
 
-	min = 1;
-	max = 10;
-	tab = ft_range(min, max);
-	while (i <= (max - min))
+	size = ft_ultimate_range(&tab, min, max);
+	if (size == 0 || tab == NULL)
+	{
+		printf("No range generated.\n");
+		return (1);
+	}
+
+	while (i < size)
 	{
 		printf("%d, ", tab[i]);
 		i++;
 	}
 	printf("\n");
-	free (tab);
+	free(tab);
 	return (0);
 }

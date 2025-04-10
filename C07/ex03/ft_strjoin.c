@@ -6,7 +6,7 @@
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/09 20:34:43 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/10 13:11:24 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,34 +83,34 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str);
 }
 
-// int main(void)
-// {
-// 	char *words[] = {"Hello", "42", "world", "!"};
-// 	char *separator = " ~ ";
-// 	char *joined;
+int main(void)
+{
+	char *words[] = {"Hello", "42", "world", "!"};
+	char *separator = " ~ ";
+	char *joined;
 
-// 	joined = ft_strjoin(4, words, separator);
-// 	if (joined)
-// 	{
-// 		printf("Joined string: \"%s\"\n", joined);
-// 		free(joined);
-// 	}
-// 	else
-// 	{
-// 		printf("Memory allocation failed.\n");
-// 	}
+	joined = ft_strjoin(4, words, separator);
+	if (joined)
+	{
+		printf("Joined string: \"%s\"\n", joined);
+		free(joined);
+	}
+	else
+	{
+		printf("Memory allocation failed.\n");
+	}
 
-// 	// Test for size == 0
-// 	joined = ft_strjoin(0, words, separator);
-// 	if (joined)
-// 	{
-// 		printf("Empty join: \"%s\"\n", joined);
-// 		free(joined);
-// 	}
-// 	else
-// 	{
-// 		printf("Memory allocation failed (empty case).\n");
-// 	}
+	// Test for size == 0
+	joined = ft_strjoin(0, words, separator);
+	if (joined)
+	{
+		printf("Empty join: \"%s\"\n", joined);
+		free(joined);
+	}
+	else
+	{
+		printf("Memory allocation failed (empty case).\n");
+	}
 
-// 	return 0;
-// }
+	return 0;
+}

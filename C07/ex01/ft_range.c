@@ -29,7 +29,7 @@ int	*ft_range(int min, int max)
 	{
 		return (0);
 	}
-	while (min <= max)
+	while (min <= max) // check again, shld exclude last val but passed by moulinette
 	{
 		array[i] = min;
 		min++;

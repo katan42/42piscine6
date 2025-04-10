@@ -6,7 +6,7 @@
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/09 16:51:27 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/10 12:13:49 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,7 @@ char	*ft_strdup(char *src)
 	i = ft_slen(src);
 	dest = (char *)malloc(sizeof(char) * (i + 1));
 	if (!(dest))
-	{
 		return (0);
-	}
 	return (str_cpy (dest, src));
 }
 
@@ -65,4 +63,3 @@ char	*ft_strdup(char *src)
 // 		allocated = ft_strdup(str);
 // 		printf("ft_copied : alloc : $%s$ @ %p\n", allocated, allocated);
 // }
-
