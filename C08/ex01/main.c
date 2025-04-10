@@ -1,58 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/10 09:21:09 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/10 02:30:01 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "ft_boolean.h"
 
-int	ft_ultimate_range(int **range, int min, int max)
+void	ft_putstr(char *str)
 {
-	int				*array;
-	unsigned int	i;
-
-	i = 0;
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	array = (int *)malloc((max - min) * sizeof(int));
-	if (!array)
-		return (-1);
-	while (min <= max)
-	{
-		*range[i] = min;
-		min++;
-		i++;
-	}
-	return (i);
+	while (*str)
+		write(1, str++, 1);
 }
 
-int	main(void)
+t_bool	ft_is_even(int nbr)
 {
-	int	min;
-	int	max;
-	int	*tab;
-	int	i = 0;
-
-	min = 1;
-	max = 10;
-	tab = ft_range(min, max);
-	while (i <= (max - min))
-	{
-		printf("%d, ", tab[i]);
-		i++;
-	}
-	printf("\n");
-	free (tab);
-	return (0);
+	return ((EVEN(nbr)) ? TRUE : FALSE);
 }
+
+int	main(int argc, char **argv)
+{
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+        ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
+}      

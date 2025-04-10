@@ -1,58 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ka-tan <ka-tan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:24:42 by ka-tan            #+#    #+#             */
-/*   Updated: 2025/04/10 09:21:09 by ka-tan           ###   ########.fr       */
+/*   Updated: 2025/04/10 03:14:17 by ka-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "ft_point.h"
+
 #include <stdio.h>
-
-int	ft_ultimate_range(int **range, int min, int max)
+void	set_point(t_point *point)
 {
-	int				*array;
-	unsigned int	i;
-
-	i = 0;
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	array = (int *)malloc((max - min) * sizeof(int));
-	if (!array)
-		return (-1);
-	while (min <= max)
-	{
-		*range[i] = min;
-		min++;
-		i++;
-	}
-	return (i);
+	point->x = 42;
+	point->y = 21;
 }
 
-int	main(void)
+int main(void)
 {
-	int	min;
-	int	max;
-	int	*tab;
-	int	i = 0;
+	t_point	point;
 
-	min = 1;
-	max = 10;
-	tab = ft_range(min, max);
-	while (i <= (max - min))
-	{
-		printf("%d, ", tab[i]);
-		i++;
-	}
-	printf("\n");
-	free (tab);
+    set_point(&point); 
+	printf("Point: x = %d, y = %d\n", point.x, point.y);
 	return (0);
+	
 }
+    
