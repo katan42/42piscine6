@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_5x5.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cloo <cloo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 20:53:41 by pchowdry          #+#    #+#             */
-/*   Updated: 2025/03/30 19:27:29 by pchowdry         ###   ########.fr       */
+/*   Updated: 2025/03/30 16:34:35 by cloo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	check_clues(int grid[4][4], int clues[16]);
+int	check_clues(int grid[6][6], int clues[24]);
 int	visible_buildings(int *arr, int size);
-int	unique_checker(int grid[4][4], int row, int column, int num);
-int	solution(int grid[4][4], int clues[16], int row, int column);
-int	*get_clues(char *str, int clues[16]);
+int	unique_checker(int grid[6][6], int row, int column, int num);
+int	solution(int grid[6][6], int clues[24], int row, int column);
+int	*get_clues(char *str, int clues[24]);
 
 //To print the grid values
-int	print_grid(int grid[4][4])
+int	print_grid(int grid[6][6])
 {
 	int		i;
 	int		j;
 	char	num;
 
 	i = 0;
-	while (i < 4)
+	j = 0;
+	while (i < 6)
 	{
 		j = 0;
-		while (j < 4)
+		while (j < 6)
 		{
 			num = grid[i][j] + '0';
 			write(1, &num, 1);
-			if (j < 3)
+			if (j < 5)
 				write(1, " ", 1);
 			j++;
 		}
@@ -44,16 +45,16 @@ int	print_grid(int grid[4][4])
 }
 
 //Initialize grid with zeros
-void	initialize_grid(int grid[4][4])
+void	initialize_grid(int grid[6][6])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < 4)
+	while (i < 6)
 	{
 		j = 0;
-		while (j < 4)
+		while (j < 6)
 		{
 			grid[i][j] = 0;
 			j++;
@@ -69,7 +70,7 @@ int	ft_strlen(char *str)
 	i = 0;
 	while (*str != '\0')
 	{
-		if (*str >= '1' && *str <= '4')
+		if (*str >= '1' && *str <= '6')
 			i++;
 		str++;
 	}
@@ -78,10 +79,12 @@ int	ft_strlen(char *str)
 
 int	main(int argc, char *argv[])
 {
-	int	grid[4][4];
-	int	clues[16];
+	int	grid[6][6];
+	int	clues[24];
 
-	if (ft_strlen(argv[1]) > 16)
+	if (argc < 2)
+		return (write(1, "Error\n", 6));
+	if (ft_strlen(argv[1]) > 24)
 		write(1, "Error\n", 6);
 	else
 	{

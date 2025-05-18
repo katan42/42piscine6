@@ -81,6 +81,8 @@ int	main(int argc, char *argv[])
 	int	grid[4][4];
 	int	clues[16];
 
+	if (argc < 2)
+		return (write(1, "Error\n", 6));
 	if (ft_strlen(argv[1]) > 16)
 		write(1, "Error\n", 6);
 	else

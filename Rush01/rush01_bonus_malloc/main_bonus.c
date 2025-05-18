@@ -88,6 +88,8 @@ int	main(int argc, char *argv[])
 	char	*temp;
 	int		i;
 
+	if (argc < 2)
+		return (write(1, "Error\n", 6));
 	n = ft_strlen(argv[1]) / 4;
 	clues = (int *)malloc(4 * n * sizeof(int));
 	if (!clues)

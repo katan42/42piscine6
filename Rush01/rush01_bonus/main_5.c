@@ -12,14 +12,14 @@
 
 #include <unistd.h>
 
-int	check_clues(int grid[7][7], int clues[28]);
+int	check_clues(int grid[5][5], int clues[20]);
 int	visible_buildings(int *arr, int size);
-int	unique_checker(int grid[7][7], int row, int column, int num);
-int	solution(int grid[7][7], int clues[28], int row, int column);
-int	*get_clues(char *str, int clues[28]);
+int	unique_checker(int grid[5][5], int row, int column, int num);
+int	solution(int grid[5][5], int clues[20], int row, int column);
+int	*get_clues(char *str, int clues[20]);
 
 //To print the grid values
-int	print_grid(int grid[7][7])
+int	print_grid(int grid[5][5])
 {
 	int		i;
 	int		j;
@@ -27,14 +27,14 @@ int	print_grid(int grid[7][7])
 
 	i = 0;
 	j = 0;
-	while (i < 7)
+	while (i < 5)
 	{
 		j = 0;
-		while (j < 7)
+		while (j < 5)
 		{
 			num = grid[i][j] + '0';
 			write(1, &num, 1);
-			if (j < 6)
+			if (j < 4)
 				write(1, " ", 1);
 			j++;
 		}
@@ -45,16 +45,16 @@ int	print_grid(int grid[7][7])
 }
 
 //Initialize grid with zeros
-void	initialize_grid(int grid[7][7])
+void	initialize_grid(int grid[5][5])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < 7)
+	while (i < 5)
 	{
 		j = 0;
-		while (j < 7)
+		while (j < 5)
 		{
 			grid[i][j] = 0;
 			j++;
@@ -70,7 +70,7 @@ int	ft_strlen(char *str)
 	i = 0;
 	while (*str != '\0')
 	{
-		if (*str >= '1' && *str <= '7')
+		if (*str >= '1' && *str <= '5')
 			i++;
 		str++;
 	}
@@ -79,10 +79,12 @@ int	ft_strlen(char *str)
 
 int	main(int argc, char *argv[])
 {
-	int	grid[7][7];
-	int	clues[28];
+	int	grid[5][5];
+	int	clues[20];
 
-	if (ft_strlen(argv[1]) > 28)
+	if (argc < 2)
+		return (write(1, "Error\n", 6));
+	if (ft_strlen(argv[1]) > 20)
 		write(1, "Error\n", 6);
 	else
 	{
