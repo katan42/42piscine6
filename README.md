@@ -34,7 +34,6 @@ Welcome! This repo contains my submissions for the 42 Singapore Piscine — a 4-
 | Project    | Description |
 |------------|-------------|
 | `rush-01`  | Solving Skyscraper-puzzle using recursive backtracking logic (4×4 board) The goal is to fill the grid with numbers 1–4 such that each number appears once per row and column, while satisfying visibility constraints given as clues around the grid's edges. This project challenged me to apply constraint solving, recursion, and input parsing without using standard libraries.
-https://www.puzzle-skyscrapers.com/|
 
 
 ---
